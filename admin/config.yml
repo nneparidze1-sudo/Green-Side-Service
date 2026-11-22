@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: nneparidze1-sudo/Green-Side-Service
   branch: main
 
 media_folder: "images"
