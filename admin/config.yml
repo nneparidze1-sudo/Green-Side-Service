@@ -1,0 +1,47 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "images"
+
+collections:
+  - name: "site_content"
+    label: "საიტის მართვა"
+    files:
+      - label: "მთავარი გვერდი და პროექტები"
+        name: "home"
+        file: "content.json"
+        fields:
+          - { label: "ზედა სლოგანი", name: "hero_badge", widget: "string" }
+          - { label: "მთავარი სათაური", name: "hero_title", widget: "string" }
+          - { label: "ქვესათაური", name: "hero_subtitle", widget: "text" }
+          - { label: "მისამართი", name: "address", widget: "string" }
+          - { label: "ტელეფონი", name: "phone", widget: "string" }
+          - { label: "ელ-ფოსტა", name: "email", widget: "string" }
+          - label: "სერვისები"
+            name: "services"
+            widget: "list"
+            fields:
+              - label: "აიქონის სტილი"
+                name: "icon"
+                widget: "select"
+                options:
+                  - { label: "ფოთოლი (დენდროლოგია)", value: "dendrology" }
+                  - { label: "გაზონი", value: "lawn" }
+                  - { label: "ხე (გამწვანება)", value: "greening" }
+                  - { label: "ტექნიკა (მიწის სამუშაოები)", value: "earthworks" }
+                  - { label: "წყალი / ტბა", value: "lake" }
+                  - { label: "წვეთი (სარწყავი)", value: "irrigation" }
+                  - { label: "ქსელები (სადრენაჟე)", value: "drainage" }
+                  - { label: "მოვლა / გასხვლა", value: "maintenance" }
+              - { label: "სერვისის სახელი", name: "title", widget: "string" }
+              - { label: "აღწერა", name: "desc", widget: "text" }
+          - label: "შესრულებული პროექტები (ფოტოები)"
+            name: "projects"
+            widget: "list"
+            fields:
+              - { label: "კატეგორია (მაგ: კერძო რეზიდენცია)", name: "category", widget: "string", required: false }
+              - { label: "პროექტის სათაური", name: "title", widget: "string" }
+              - { label: "მოკლე აღწერა", name: "desc", widget: "text" }
+              - { label: "ფოტო", name: "image", widget: "image" }
